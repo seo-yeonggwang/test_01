@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-size:12px;
+        }
+        #login_box
+        {
+            width:220px;
+            height:60px;
+            border:solid 1px #bbbbbb;
+            border-radius: 15px;
+            margin:10px 0 0 10px;
+            padding:10px 0 0 15px;
+            position : absolute;
+            top : 40%;
+            left : 40%;
+        }
+        #login_box input
+        {
+            width:100px;
+            height:18px;        
+        }
+        #id_pass,#login_bt
+        {
+            display:inline-block;
+            vertical-align : top;
+        }
+        #id_pass span
+        {
+            display: inline-block;
+            width:20px;
+        }
+        #pass
+        {
+            margin-top:3px;
+        }
+        #login_bt button
+        {
+            margin-left:5px;
+            padding:12px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div id="login_box">
+            <ul id="input_button">
+                <li id="id_pass">
+                    <ul>
+                        <li>
+                            <span>ID</span>
+                            <input type="text">                            
+                        </li>
+                        <li id="pass">
+                            <span>PW</span>
+                            <input type="password">
+                        </li>
+                    </ul>
+                </li>
+           
+                <li id="login_bt">
+                <button>로그인</button>
+                </li>
+            </ul>
+
+        </div>
+    </form>
+</body>
+</html>
