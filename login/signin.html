@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:400px;
+            height:280px;
+            border:solid 1px #bbbbbb;
+            border-radius: 15px;
+            margin:10px 0 0 10px;
+            padding:10px 0 0 15px;
+        }
+        #pw{
+            margin-top:3px;
+        }
+        #id_pass,#pw,#pw-check{
+            display:inline-block;
+            vertical-align:top;
+        }
+        #boder input{
+            width:100px;
+            height:18px;          
+        }
+        #check{
+            text-align : center;
+        }
+    </style>
+    <body>
+        <div id="box">
+            <ul id="input_button">
+                <oi id="login">
+                    <ul>
+                        <div class="id">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          </div>
+
+                        <div class="pw">
+                            비밀번호 <input type="password" id="pw1">
+                        </div>
+
+                        <div class = "pw">
+                            비밀번호 확인 <input type="password" id="pw2">
+                            <div id = "check">
+                                <input type = "button" id = "check" value = "비밀번호 확인">
+                            </div>
+                        </div>
+
+                        <div id="student-number">
+                            <span>학번</span>
+                            <input type="name" id = "student" maxlength="10">
+                        </div>
+
+                        <div>
+                            학과<div id = "major"></div>
+                        </div>
+
+                        <div>
+                            <div class="ph">
+                                <span>
+                                    휴대폰 번호 <input type="text" id="phone-number" maxlength="13">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type = "button" id = "sucess" value = "회원가입">
+                        </div>
+
+                        <div>
+                            <input type = "button" id = "cancel" onclick = "location.href = 'practice1.html'" value = "cancel">
+                        </div>
+
+                    </ul>
+                </oi>
+            </ul>
+        </div>
+    </body>
+</html>
+<script>
+    let Snumber = document.getElementById('student');
+            Snumber.addEventListener('change', function (event) {
+                if(Snumber.value.substring(4,7)=='136')
+                document.getElementById('major').innerHTML = "컴퓨터공학부";
+
+                else{
+                    document.getElementById('major').innerHTML = "";
+                }
+            });
+
+    let p = document.getElementById('check');
+            p.addEventListener('click', function (event) {
+                let p1 = document.getElementById('pw1').value;
+                let p2 = document.getElementById('pw2').value;
+
+                if (p1 != p2) {
+                    alert('비밀번호불일치');
+
+                } else {
+                    alert('비밀번호가 일치합니다');
+                }
+                
+            });
+
+    let phone = document.getElementById('phone-number');
+    phone.addEventListener('input', function (event) {
+                phone.value = phone.value
+                    .replace(/[^0-9]/g, '')//[^0-9]= 0-9까지를 제외하고 찾음
+                    .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
+                    .replace(/(\-{1,2})$/g, "");
+
+            });
+</script>
